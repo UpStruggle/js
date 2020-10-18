@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      var div = document.querySelector("div");
+      var timer = setInterval(function () {
+        if (div.offsetLeft >= 400) {
+          //停止动画 即停止定时器
+          clearInterval(timer);
+        }
+        div.style.left = div.offsetLeft + 1 + "px";
+      }, 30);
+
+      //动画函数的封装  obj 目标对象 target 目标位置
+      function animate(obj, target) {
+        var timer = setInterval(function () {
+          if (obj.offsetLeft >= target) {
+            //停止动画 即停止定时器
+            clearInterval(timer);
+          }
+          obj.style.left = obj.offsetLeft + 1 + "px";
+        }, 30);
+      }
+      //调用函数
+      var div = document.querySelector("div");
+      animate(div, 300);
+
+      //给不同元素记录不同定时器
+      function animate(obj, target) {
+        //先清除以前的定时器，只保留当前的一个定时器执行
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+          if (obj.offsetLeft >= target) {
+            //停止动画 即停止定时器
+            clearInterval(obj.timer);
+          }
+          obj.style.left = obj.offsetLeft + 1 + "px";
+        }, 15);
+      }
+      var div = document.querySelector("div");
+      animate(div, 300);
+    </script>
+  </body>
+</html>
