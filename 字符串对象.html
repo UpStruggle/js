@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>字符串对象</title>
+    <script>
+      //**1.字符串对象  根据字符返回位置**
+      // var str1 = "改革春风吹满地，春天来了";
+      // console.log(str1.indexOf("春")); //返回2
+      // console.log(str1.indexOf("春", 3)); //从索引号为3的位置开始查找 返回8
+      // console.log(str1.lastIndexOf("春")); //返回8
+
+      //**2.根据位置返回字符**
+      //(1)charAt(index)
+      var str2 = "andy";
+      console.log(str2.charAt(3)); //y
+      //遍历所有的字符 输出字符串的所有字符
+      for (var i = 0; i < str2.length; i++) {
+        console.log(str2.charAt(i));
+      }
+      //(2)charCodeAt(index)  返回相应索引号的字符ACSII值 目的：判断用户按下了哪个键
+      console.log(str2.charCodeAt(0)); //97
+      //(3)str[index]  H5新增的 存在兼容性问题
+      console.log(str2[3]); //y
+
+      //**3.字符串的操作方法**
+      //（1）concat('字符串1'，'字符串2'.....)
+      var str3 = "andy";
+      console.log(str3.concat("red")); //andyred
+      // (2) substr('截取的起始位置','截取几个字符')
+      console.log(str3.substr(2, 2)); //dy 第一个2是索引号的2，第二个2是取两个字符
+      //（3）slice(start,end)   从start开始截取到end位置，但end取不到 (他俩都是索引号)
+      console.log(str3.slice(0, 2)); //an
+
+      //**4.替换字符 **
+      //replace('被替换的字符'，'替换为的字符')  只会替换第一个字符
+      //可借助循环替换字符串中所有想要替换的字符
+      //将字符串中的o替换为*
+      var str4 = "abcoefoxyozzopp";
+      while (str4.indexOf("o") !== -1) {
+        str4 = str4.replace("o", "*");
+      }
+      console.log(str4);
+
+      //**5.字符转换为数组 **
+      //split('分隔符')  前面学过join 把数组转换为字符串
+      var str5 = "red,pink,blue";
+      console.log(str5.split(",")); //['red', 'pink', 'blue']
+      var str6 = "red&pink&blue";
+      console.log(str6.split("&")); //['red', 'pink', 'blue']
+    </script>
+  </head>
+  <body></body>
+</html>

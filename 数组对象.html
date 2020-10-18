@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组对象</title>
+    <script>
+      //**创建数组的两种方式**
+      //方式一
+      // var arr1 = new Array(2);  //创建了一个长度为2的数组，里面有两个空的数组元素
+      // var arr2 = new Array(2,3);  //等价于[2,3] 表示里面有两个元素 是2和3
+      //方式二
+      // var arr3 =[];
+      // console.log(arr3);
+
+      //**检测是否为数组**
+
+      //方法（1）instanceof 运算符  它可以用来检测是否为数组
+      //   var arr = [];
+      //   var obj = {};
+      //   console.log(arr instanceof Array); //true
+      //   console.log(obj instanceof Array); //false
+      //方法（2） Array.isArray(参数)  参数为要检测的值  H5新增 ie9以上支持
+      //   console.log(Array.isArray(arr));
+
+      //**添加删除数组元素的方法**
+
+      //1.push() 在我们数组的末尾添加一个或者多个数组元素
+      //   var arr = [1, 2, 3];
+      //   arr.push(4, "pink");
+      //   console.log(arr); //输出[1, 2, 3, 4, 'pink']
+      //   console.log(arr.push(4, "pink")); //输出7
+
+      //2.unshift 在数组的开头添加一个或多个数组元素
+      //   var arr = [1, 2, 3];
+      //   arr.unshift(4, "pink");
+      //   console.log(arr);  //输出[4, 'pink', 1, 2, 3]
+      //   console.log(arr.unshift(4, "pink")); //输出7
+
+      //3.pop()  删除数组的最后一个元素，一次只能删一个
+      //   var arr = [1, 2, 3, 4, 5, 6];
+      //   arr.pop(); //删除6
+      //   console.log(arr); //输出 [1, 2, 3, 4, 5]
+      //   console.log(arr.pop()); //输出5  即输出刚刚删除的数字
+
+      //4.shift() : 删除数组的第一个元素，一次只能删一个
+      //   var arr = [1, 2, 3, 4, 5, 6];
+      //   arr.shift(); //删除1
+      //   console.log(arr); //输出 [ 2, 3, 4, 5, 6]
+      //   console.log(arr.shift()); //输出2  即输出刚刚删除的数字
+
+      //**数组排序**//
+
+      //1.翻转数组
+      //   var arr = ["pink", "blue", "yellow", "red", "green"];
+      //   arr.reverse();
+      //   console.log(arr); //输出['green', 'red', 'yellow', 'blue', 'pink']
+
+      //2.数组排序 （冒泡排序） sort( )
+      //   var arr = [2, 6, 8, 3, 9, 4, 9, 7];
+      //   arr.sort(function (a, b) {
+      //     //return a-b; //按照升序排列
+      //     return b - a; //按照降序排列
+      //   });
+      //   console.log(arr);
+
+      //3.数组索引方法
+      //indexOf(要返回的值) 从前面开始查找
+      //lastIndexOf(要返回的值) 从后面开始查找
+      //   var arr = ["pink", "blue", "yellow", "red", "blue"];
+      //   console.log(arr.indexOf("blue")); //返回值为1
+      //   console.log(arr.lastIndexOf("blue")); // 返回值为4
+
+      //4.数组转换为字符串
+      //(1)toString() 把数组转换为字符串，逗号分隔每一项  返回一个字符串
+      var arr1 = [1, 2, 3];
+      console.log(arr1.toString()); //1,2,3
+      //(2)join('分隔符') 把数组中的所有元素转换为一个字符串  返回一个字符串
+      var arr2 = ["pink", "blue", "yellow", "red", "green"];
+      console.log(arr2.join()); //pink,blue,yellow,red,green
+      console.log(arr2.join("-")); //pink-blue-yellow-red-green
+      console.log(arr2.join("&")); //pink&blue&yellow&red&green
+    </script>
+  </head>
+  <body></body>
+</html>

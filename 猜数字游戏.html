@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>猜数字</title>
+    <script>
+      //   function getRandom(min, max) {
+      //     return Math.floor(Math.random() * (max - min + 1)) + min;
+      //   }
+      //   var random = getRandom(1, 10);
+      //   console.log(random);
+      //   while (true) {
+      //     //死循环
+      //     var num = prompt("请输入一个数字");
+      //     if (num > random) {
+      //       alert("数字大了，继续猜");
+      //     } else if (num < random) {
+      //       alert("数字小了，继续猜");
+      //     } else {
+      //       alert("猜对了");
+      //       break; //退出整个循环，结束
+      //     }
+      //   }
+
+      // 输入1-50内的数，但只有10此机会
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      var random = getRandom(1, 50);
+      var count = 0;
+      while (true) {
+        //死循环
+        var num = prompt("请输入一个数字");
+        if (num > random) {
+          alert("数字大了，继续猜");
+          count++;
+        } else if (num < random) {
+          alert("数字小了，继续猜");
+          count++;
+        } else {
+          alert("猜对了");
+          break; //退出整个循环，结束
+        }
+        if (count >= 10) {
+          alert("机会用完了，失败了");
+          break;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

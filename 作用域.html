@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作用域</title>
+    <script>
+      function f1() {
+        var a = (b = c = 9); //相当于 var a = 9;b = 9;c = 9;(b和c直接赋值，没有var声明，属于全局变量)
+        //集体声明应该是var a = 9，b = 9，c = 9;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+      f1();
+      console.log(c);
+      console.log(b);
+      console.log(a);
+      ///输出结果为 9 9 9 9 9 报错
+    </script>
+  </head>
+  <body></body>
+</html>

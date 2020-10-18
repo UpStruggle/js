@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日期对象</title>
+    <script>
+      //Date 日期对象 是一个构造函数 必须使用 new 来调用创建我们的日期对象
+      //   var arr = new Array(); //创建一个数组对象
+      //   var obj = new Object(); //创建了一个实例对象
+      //   //1.使用Date   如果没有参数，返回当前系统的当前时间
+      //   var date = new Date();
+      //   console.log(date);
+      //   //2.参数常用的写法  数字型 2020，09，28   或者是字符串型 ‘2020-09-28 8：8：8’
+      //   var date1 = new Date(2020, 09, 1);
+      //   console.log(date1); //返回的是10月，不是9月
+      //   var date2 = new Date("2020-09-28 8:8:8");
+      //   console.log(date2);//此时返回的正确
+
+      //格式化日期 年月日
+      //   var date = new Date();
+      //   console.log(date.getFullYear()); //返回当前年份 2020
+      //   console.log(date.getMonth() + 1); //月份 返回的月份小一个月  要把月份+1
+      //   console.log(date.getDate()); //返回的是几号
+      //   console.log(date.getDay()); //返回星期 周一是1  但周日是0
+
+      //想得到一个2020 年9月29日星期二
+      //   var date = new Date();
+      //   var year = date.getFullYear();
+      //   var month = date.getMonth() + 1;
+      //   var day = date.getDate();
+      //   var arr = ["日", "一", "二", "三", "四", "五", "六"];
+      //   var week = date.getDay();
+      //   console.log(year + "年" + month + "月" + day + "日" + "星期" + arr[week]);
+
+      //格式化日期 时分秒
+      // function getTime() {
+      //   var time = new Date();
+      //   var h = time.getHours(); //的到当前小时
+      //   h = h > 10 ? h : "0" + h;
+      //   var m = time.getMinutes(); //得到当前分钟
+      //   m = m > 10 ? m : "0" + m;
+      //   var s = time.getSeconds(); //得到当前秒
+      //   s = s > 10 ? s : "0" + s;
+      //   return h + ":" + m + ":" + s;
+      // }
+      // console.log(getTime());
+
+      //获取日期的总的毫秒数（时间戳） 永远不会重复  Date对象是基于1970年1月1日起的毫秒数
+      //valueOf()  或 getTime()
+      var time = new Date();
+      console.log(time.valueOf());
+      console.log(time.getTime());
+      //简单的写法
+      var date = +new Date(); // + new Date()  返回的就是总的毫秒数
+      console.log(date);
+      //H5新增方法  有兼容性问题
+      console.log(Date.now());
+    </script>
+  </head>
+  <body></body>
+</html>

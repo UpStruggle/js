@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象</title>
+    <script>
+      //**1.利用对象字面量创建对象{}**
+      //var obj = {}; //创建了一个空的对象
+      //   var obj={
+      //       uname:'杨冉然',
+      //       age=18,
+      //       sex:'女',
+      //       sayHi:function(){
+      //           console.log('hi');
+      //       }
+      //   }
+      //   //1.里面的属性或者方法采取键值对的形式  键 属性名 ： 值  属性值
+      //   //2.多个属性或者方法中间用逗号隔开
+      //   //3.方法冒号后面跟的是一个匿名函数
+
+      //   //使用对象
+      //   //1.调用对象的属性  采取 对象名.  属性名.
+      //   console.log(obj.uname);
+      //   //2.另一种方法：对象名['属性名']
+      //   console.log(obj['age']);
+      //   //调用对象的方法  对象名.方法名
+      //   obj.sayHi();  //小括号必须添加
+
+      //**2. 利用new Object创建对象**
+      //   var obj = new Object(); //创建了一个空的对象
+      //   obj.uname = "杨冉然";
+      //   obj.age = 18;
+      //   obj.sex = "女";
+      //   obj.sayHi = function () {
+      //     console.log("hi");
+      //   };
+      //   //1.利用等号赋值的方法添加对象的属性和方法
+      //   //2.每个属性和方法之间用分号隔开
+      //   console.log(obj.uname);
+      //   console.log(obj["sex"]);
+      //   obj.sayHi();
+
+      //**3. 利用构造函数创建对象**  产生原因：因为前面两种方式创建对对象一次只能创建一个对象
+      //构造函数 就是把对象里面的一些相同的属性和方法抽象出来封装到函数里面，这个函数称为构造函数
+      //构造函数的语法格式  function 构造函数名（）{ this.属性 = 值; this.方法 = function(){ } }
+      //调用构造函数的方法  new  构造函数名（）;
+      //   function Star(uname, age, sex) {
+      //     this.name = uname;
+      //     this.age = age;
+      //     this.sex = sex;
+      //     this.sing = function () {
+      //       console.log(sang);
+      //     };
+      //   }
+      //   var ldh = new Star("刘德华", 18, "男"); //调用函数返回的是一个对象
+      //   console.log(ldh.name);
+      //   console.log(ldh["sex"]);
+      //   ldh.sing("冰雨");
+      //   var zxy = new Star("张学友", 19, "男");
+      //   console.log(zxy.name);
+      //   zxy.sing("李香兰");
+      //   //1.构造函数名字的首字母必须要大写
+      //   //2.我们构造函数不需要return 就可以返回结果
+      //   //3.调用构造函数必须使用new
+      //   //4.只要new Star () 调用函数就创建一个对象
+      //   //5.属性和方法前面必须添加  this
+
+
+      //**遍历对象**  for ....in 遍历对象
+      //格式： for (变量 in 对象){     }
+      var obj={
+        uname:'杨冉然',
+        age=18,
+        sex:'女',
+        sayHi:function(){
+          console.log('hi');
+        }
+      }
+
+      for (var k in obj){
+          console.log(k);  //k变量输出 得到的是属性名，
+          console.log(obj[k]); //obj[k]得到的是属性值
+
+      }
+      //for in 里面的变量，习惯用 k
+      //方法也一样能遍历出来，但一般不用
+
+      //有一个对象 来判断是否有该属性  对象['属性名']
+      var o = {
+        age:18
+      }
+      if (o['age']){
+        console.log('里面有该属性');
+      }else{
+        console.log('里面没有该属性');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

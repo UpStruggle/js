@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简单数据类型和复杂数据类型</title>
+    <script>
+      //简单数据类型null 返回的是一个空的对象 object
+      var timer = null;
+      console.log(typeof timer); //object
+      //如果有个变量以后打算用来储存为对象，暂时不知道放什么，就给null
+
+      function fn(a) {
+        a++;
+        console.log(a);
+      }
+      var x = 10;
+      fn(x);
+      console.log(x); //x=10 a=11
+
+      function Person() {
+        this.name = name;
+      }
+
+      function f1(x) {
+        //x==p
+        console.log(X.name); //输出： 刘德华
+        X.name = "张学友";
+        console.log(X.name); //输出 ： 张学友
+      }
+      var p = new Person("刘德华");
+      console.log(p.name); //输出 ： 刘德华
+      f1(p);
+      console.log(p.name); //输出 ： 张学友
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>字符串案例</title>
+    <script>
+      // //   案例1.查找字符串中某一个字符出现的位置及次数
+      // //   算法：先查找第一个o出现的位置 ，然后只要indexOf返回的结果不是-1就继续往后查找
+      // //   因为indexOf只能查找到一个，所以后面的查找，利用第二个参数，当前索引加1，从而继续查找
+      // function Seek1(str) {
+      //   var count1 = 0;
+      //   var index1 = str.indexOf("o");
+      //   while (index1 !== -1) {
+      //     console.log(index1);
+      //     index1 = str.indexOf("o", index1 + 1);
+      //     count1++;
+      //   }
+      //   result1 = "次数为" + count1;
+      //   return result1;
+      // }
+      // console.log(Seek1("oabcoefoxyozzopp"));
+
+      // //数组类比
+      // function Seek2(arr) {
+      //   var count2 = 0;
+      //   var index2 = arr.indexOf("red");
+      //   while (index2 !== -1) {
+      //     console.log(index2);
+      //     index2 = arr.indexOf("red", index2 + 1);
+      //     count2++;
+      //   }
+      //   result2 = "次数为" + count2;
+      //   return result2;
+      // }
+      // console.log(Seek2(["pink", "blue", "yellow", "red", "green", "red"]));
+
+      // // 案例2 判断字符串中出现次数最多的字符，并统计次数
+      // // 算法：
+      // // 1.利用charAt() 遍历这个字符串
+      // // 2.把每个字符都赋值给对象，如果对象没有该属性，就为1，如果存在了，就 +1
+      // // 3.遍历对象，得到最大值和该字符
+      // var str = "abcoefoxyozzopp";
+      // var o = {};
+      // for (var i = 0; i < str.length; i++) {
+      //   var chars = str.charAt(i); //chars是字符串中的每一个字符
+      //   if (o[chars]) {
+      //     //o[chars]得到的是属性值
+      //     o[chars]++;
+      //   } else {
+      //     o[chars] = 1;
+      //   }
+      // }
+      // console.log(o); //输出对象
+      // //遍历对象
+      // var max = 0;
+      // var ch = "";
+      // for (var k in o) {
+      //   // k得到的是属性名，o[k]得到的是属性值
+      //   if (o[k] > max) {
+      //     max = o[k];
+      //     ch = k; //k出了for循环就不起作用了，这里再用一个参数存储k
+      //   }
+      // }
+      // console.log("出现最多的字符为" + ch);
+      // console.log("出现次数为" + max);
+
+      //字符串作业综合(未完成)
+      var str3 = "abaasdffggghhjjkkgfddsssss3444343";
+      var cut = str3.substr(0, 1);
+      var cut2 = str3.slice(1, 6);
+      var exit = str3.indexOf("i");
+      var newStr = "";
+      var o = {};
+      var max = 0;
+      var ch = "";
+      while (str3.indexOf("g") !== -1) {
+        newStr = str3.replace("g", "22");
+      }
+      console.log(newStr); //4.替换指定字符'g'->'22'  'ss'->b ??
+      for (var i = 0; i < str3.length; i++) {
+        var chars = str3.charAt(i);
+        if (o[chars]) {
+          o[chars]++;
+        } else {
+          o[chars] = 1;
+        }
+      }
+
+      for (var k in o) {
+        if (o[k] > max) {
+          max = o[k];
+          ch = k;
+        }
+      }
+
+      console.log(str3.length); //1.字符串的长度
+      console.log(cut); //2.取出指定位置字符
+      console.log(exit); //3.判断字符的存在
+
+      console.log(cut2); //5.截取指定位置字符串
+      console.log("出现次数最多的是" + ch);
+      console.log("次数为" + max); //6.max
+    </script>
+  </head>
+  <body></body>
+</html>

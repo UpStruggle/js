@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组</title>
+    <script>
+      // var sum = 0;
+      // var average = 0;
+      // var max = arr[0];
+      // var arr = [2, 6, 1, 7, 4]; //我们数组里面的数据一定用逗号隔开，可以存放任意类型的数据
+      // for (var i = 0; i < arr.length; i++) {
+      //   sum += arr[i];
+      //   if (max < arr[i]) {
+      //     max = arr[i];
+      //   }
+      // }
+      // average = sum / arr.length;
+      // console.log("总和为" + sum);
+      // console.log("平均值为" + average); //  console.log(sum,average);
+      // console.log("最大值为" + max);
+
+      //例2 输出规定样式数组元素
+      // var str = "";
+      // var step = "|";
+      // var arr = ["red", "green", "blue", "pink"];
+      // for (var i = 0; i < arr.length; i++) {
+      //   str += arr[i] + step; //是+=
+      // }
+      // console.log(str);
+
+      //例3：增加数组元素
+      // var str = "";
+      // var arr = ["red", "green", "blue", "pink"];
+      // console.log(arr.length);
+      // arr.length = arr.length + 1;
+      // console.log(arr.length);
+      // arr[0]='yellow';  //如果索引号所代表数组位本来已经存在元素，则替换
+      // arr[4]='black'; //如果索引号所代表数组位本来不存在元素，则追加
+      // arr="white"; //数组元素将便为white  不要直接给数组名赋值，否则里面的数组元素都没有了
+
+      //例4
+      // var arr = new Array();
+      // var num = parseFloat(prompt("数组内元素个数为："));
+      // for (var i = 0; i < num; i++) {
+      //   arr[i] = i + 1;
+      // }
+      // alert(arr);
+
+      //例5(方法一)
+      // var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      // var j = 0;
+      // var arr1 = new Array();
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr[i] > 10) {
+      //     arr1[j] = arr[i];
+      //     j = j + 1;
+      //   }
+      // }
+      // console.log(arr1);
+
+      //例5(方法二)
+      // var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      // var arr1 = new Array();
+      // var arr2 = new Array();
+      // for (i = 0; i < arr.length; i++) {
+      //   if (arr[i] >= 10) {
+      //     arr1[arr1.length] = arr[i];
+      //   }
+      //   if (arr[i] !== 0) {
+      //     arr2[arr2.length] = arr[i];
+      //   }
+      // }
+      // console.log(arr1);
+      // console.log(arr2);
+
+      //例6 翻转数组
+      // var arr = ["red", "green", "blue", "pink", "purple"];
+      // var newArry = [];
+      // for (var i = arr.length - 1; i >= 0; i--) {
+      //   newArry[newArry.length] = arr[i];
+      // }
+      // console.log(newArry);
+
+      //例7  数组排序之冒泡排序
+      // var arr = [5, 6, 7, 0, 1];
+      // for (var i = 0; i <= arr.length - 1; i++) { //外层循环次数
+      //   for (var j = 0; j <= arr.length - i - 1; j++) {  //内循环，每一趟的交换次数
+      //   //内部交换2个变量的值，前一个和后一个数组元素相比较
+      //     if (arr[j] > arr[j + 1]) {
+      //       var temp = arr[j];
+      //       arr[j] = arr[j + 1];
+      //       arr[j + 1] = temp;
+      //     }
+      //   }
+      // }
+      // console.log(arr);
+    </script>
+  </head>
+  <body></body>
+</html>
